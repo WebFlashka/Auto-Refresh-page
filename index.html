@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto Refresh</title>
+</head>
+<body>
+  <h1>У вас <span id="countdown">30</span> секунд, до автообновления страницы.</h1>
+  
+  <!-- Ваш контент здесь -->
+
+  <script>
+    let countdown = 30;
+
+    function updateCountdown() {
+      if (countdown > 0) {
+        countdown--;
+        document.getElementById('countdown').innerText = countdown;
+      } else {
+        location.reload();
+      }
+    }
+
+    // Обновляем счетчик каждую секунду
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
